@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.SignalR;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
 using ServerSignalR.Helpers;
-using System.Text.Json.Nodes;
 
 namespace ServerSignalR.Hubs
 {
@@ -14,22 +12,26 @@ namespace ServerSignalR.Hubs
         {
             _logger = logger;
         }
-        public async Task Register(string userName)
+        public async Task Register(string macAddress)
         {
-
-
             // Load JSON from the file
             string json = await File.ReadAllTextAsync(@"Data\UserConnectionIds.json");
             JObject jsonObj = JObject.Parse(json);
-            // var name = GeneralMethods.FirstAndLastLetter(jsonObj[userName].ToString());
             // Modify the configuration
-            //var connectionDetails = new { ConnectionId = Context.ConnectionId };
-            jsonObj[userName] = Context.ConnectionId;
+            var connectionDetails = new { MacAddress = macAddress, ConnectionId = Context.ConnectionId };
+            switch (macAddress)
+            {
+                case "a8ba6f638b73428b":
+                    jsonObj["Counter 1"] = JObject.FromObject(connectionDetails);
+                    break;
+                    // case "1":
+                    //     jsonObj["Counter 2"] = JObject.FromObject(connectionDetails);
+                    //     break;
+                    // case "2":
+                    //     jsonObj["Counter 3"] = JObject.FromObject(connectionDetails);
+                    //     break;
+            }
 
-
-            // Write back to the file
-            // string output = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
-            // await File.WriteAllTextAsync(@"Data\UserConnectionIds.json", output);
 
             bool isSuccess = await FileHelper.WriteJsonToFileAsync(@"Data\UserConnectionIds.json", jsonObj);
             if (isSuccess)
@@ -40,6 +42,10 @@ namespace ServerSignalR.Hubs
             {
                 _logger.LogInformation("Failed to write JSON data after multiple attempts.");
             }
+        }
+        public void LogServerMessage(string logMessage)
+        {
+            _logger.LogInformation(logMessage);
         }
     }
 }

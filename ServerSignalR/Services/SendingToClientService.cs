@@ -18,10 +18,10 @@ namespace ServerSignalR.Services
         {
             foreach (var ScreenInfo in screenInfos)
             {
-                if (_config[ScreenInfo.WindowName] != null)
+                if (_config[ScreenInfo.WindowName + ":ConnectionId"] != null)
                 {
-                    _hubContext.Clients.Client(_config[ScreenInfo.WindowName].Trim()).SendAsync("SlipNumber", ScreenInfo.SlipNumber);
-                    Console.WriteLine(ScreenInfo.WindowName + ": " + ScreenInfo.SlipNumber);
+                    _hubContext.Clients.Client(_config[ScreenInfo.WindowName + ":ConnectionId"].Trim()).SendAsync("SlipNumber", ScreenInfo.SlipNumber);
+                    Console.WriteLine(ScreenInfo.WindowName + ":" + ScreenInfo.SlipNumber);
                 }
             }
         }

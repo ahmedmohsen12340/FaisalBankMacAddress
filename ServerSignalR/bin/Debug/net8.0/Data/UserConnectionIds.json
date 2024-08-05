@@ -1,5 +1,6 @@
 {
-  "Counter 1": "bxBHLFlr6G-LWagkCk07uA",
-  "Counter 2": "Pjg7b4efn6zmiuJP-9kb2w",
-  "Counter 3": "xv3S62sFEImBXoiZXh5fdQ"
+  "Counter 1": {
+    "MacAddress": "a8ba6f638b73428b",
+    "ConnectionId": "rwi713SO5ieWmzRZcdQm2A"
+  }
 }

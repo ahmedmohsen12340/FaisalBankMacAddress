@@ -37,20 +37,19 @@ public class FileWatcherService
     private void OnChanged(object sender, FileSystemEventArgs e)
     {
         _lastChangePath = e.FullPath;
-        _debounceTimer.Change(500, Timeout.Infinite); // Debounce for 500ms
+        _debounceTimer.Change(100, Timeout.Infinite); // Debounce for 500ms
     }
 
     private void OnRenamed(object sender, RenamedEventArgs e)
     {
         _lastChangePath = e.FullPath;
-        _debounceTimer.Change(500, Timeout.Infinite); // Debounce for 500ms
+        _debounceTimer.Change(100, Timeout.Infinite); // Debounce for 500ms
     }
 
     private async void DebounceCallback(object state)
     {
         //invoke the main logic i want to do when file changes
         await _mainLogic.Process();
-        //await _hubContext.Clients.Client(_config["user1"]).SendAsync("ReceiveMessage", $"File changed: {_lastChangePath}");
     }
 }
 

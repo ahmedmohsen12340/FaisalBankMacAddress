@@ -1,0 +1,11 @@
+C:\Users\ahmad_hafez\Desktop\MyMaCAddressProj\ServerSignalR.exe
+C:\Users\ahmad_hafez\Desktop\MyMaCAddressProj\appsettings.Development.json
+C:\Users\ahmad_hafez\Desktop\MyMaCAddressProj\appsettings.json
+C:\Users\ahmad_hafez\Desktop\MyMaCAddressProj\Data\LastValues.json
+C:\Users\ahmad_hafez\Desktop\MyMaCAddressProj\Data\UserConnectionIds.json
+C:\Users\ahmad_hafez\Desktop\MyMaCAddressProj\ServerSignalR.dll
+C:\Users\ahmad_hafez\Desktop\MyMaCAddressProj\ServerSignalR.deps.json
+C:\Users\ahmad_hafez\Desktop\MyMaCAddressProj\ServerSignalR.runtimeconfig.json
+C:\Users\ahmad_hafez\Desktop\MyMaCAddressProj\ServerSignalR.pdb
+C:\Users\ahmad_hafez\Desktop\MyMaCAddressProj\Newtonsoft.Json.dll
+C:\Users\ahmad_hafez\Desktop\MyMaCAddressProj\System.Net.WebSockets.WebSocketProtocol.dll

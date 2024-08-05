@@ -9,9 +9,9 @@ namespace SignalRClient
         static async Task Main(string[] args)
         {
             // Get the value of an environment variable
-            string userName = Environment.GetEnvironmentVariable("userName");
+            // string userName = Environment.GetEnvironmentVariable("userName");
             var connection = new HubConnectionBuilder()
-                .WithUrl("http://localhost:5255/TriggerHub")
+                .WithUrl("http://10.120.12.189:3100/SignalRMacV1/TriggerHub")
                 .Build();
 
             connection.On<string>("SlipNumber", (message) =>
@@ -29,7 +29,7 @@ namespace SignalRClient
                 Console.WriteLine($"Error connecting to the server: {ex.Message}");
                 return;
             }
-            await connection.InvokeAsync("Register", userName);
+            await connection.InvokeAsync("Register", "a8ba6f638b73428b");
 
 
             // Check the connection state periodically
@@ -42,7 +42,7 @@ namespace SignalRClient
                     {
                         await connection.StartAsync();
                         Console.WriteLine("Connected to the server.");
-                        await connection.InvokeAsync("Register", userName);
+                        await connection.InvokeAsync("Register", "a8ba6f638b73428b");
 
                     }
                     catch (Exception ex)

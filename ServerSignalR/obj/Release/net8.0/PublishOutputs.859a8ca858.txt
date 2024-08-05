@@ -1,0 +1,11 @@
+D:\FaisalBank\FaisalBankMacAddress\publish\ServerSignalR.exe
+D:\FaisalBank\FaisalBankMacAddress\publish\appsettings.Development.json
+D:\FaisalBank\FaisalBankMacAddress\publish\appsettings.json
+D:\FaisalBank\FaisalBankMacAddress\publish\Data\LastValues.json
+D:\FaisalBank\FaisalBankMacAddress\publish\Data\UserConnectionIds.json
+D:\FaisalBank\FaisalBankMacAddress\publish\ServerSignalR.dll
+D:\FaisalBank\FaisalBankMacAddress\publish\ServerSignalR.deps.json
+D:\FaisalBank\FaisalBankMacAddress\publish\ServerSignalR.runtimeconfig.json
+D:\FaisalBank\FaisalBankMacAddress\publish\ServerSignalR.pdb
+D:\FaisalBank\FaisalBankMacAddress\publish\Newtonsoft.Json.dll
+D:\FaisalBank\FaisalBankMacAddress\publish\System.Net.WebSockets.WebSocketProtocol.dll
